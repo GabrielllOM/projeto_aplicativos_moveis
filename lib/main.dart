@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_aplicacoes_moveis/home.dart';
-import 'package:projeto_aplicacoes_moveis/busca_cep.dart';
-import 'package:projeto_aplicacoes_moveis/bitcoin.dart';
-import 'package:projeto_aplicacoes_moveis/tela_empresa.dart';
+import 'telas/home.dart';
+import 'telas/servicos.dart';
+import 'telas/clientes.dart';
+import 'telas/contato.dart';
+import 'telas/bitcoin.dart';
+import 'telas/busca_cep.dart';
+import 'telas/empresa.dart';
 
-// Importar as telas
 
 
-void main(){
+
+void main() {
   runApp(MaterialApp(
-    home: Home(),
     debugShowCheckedModeBanner: false,
     initialRoute: '/',
-      routes: {
-        '/buscacep': (context) => BuscaCep(),
-        '/bitcoin': (context) => Bitcoin(),
-        '/empresa': (context) => TelaEmpresa(),
+    routes: {
+      '/': (context) => Home(),               // Tela principal
+      '/empresa': (context) => TelaEmpresa(),
+      '/servicos': (context) => Servicos(),
+      '/clientes': (context) => Clientes(),
+      '/contato': (context) => Contato(),
+      '/buscacep': (context) => BuscaCep(),
+      '/bitcoin': (context) => Bitcoin(),
 
-        // Rotas para as telas importadas, adicionar Servicos, Clientes e Contato
-
-      },
+    },
   ));
 }
