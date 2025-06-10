@@ -4,19 +4,20 @@ class Contato extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // fundo branco igual ao do professor
+      backgroundColor: Colors.white,                     // fundo branco
       appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: Text('Contato'),
+        backgroundColor: Colors.green,                  // barra verde
+        foregroundColor: Colors.white,                  // seta + título brancos
+        title: const Text('Contato'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Ícone e título
+            // Ícone grande + título preto
             Row(
-              children: [
+              children: const [
                 Icon(Icons.email, size: 60, color: Colors.green),
                 SizedBox(width: 12),
                 Text(
@@ -24,17 +25,17 @@ class Contato extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Colors.green,
+                    color: Colors.black,                // texto preto
                   ),
                 ),
               ],
             ),
             SizedBox(height: 32),
-            Text('Email: atendimento@novaroma.edu.br'),
+            const Text('Email: atendimento@novaroma.edu.br'),
             SizedBox(height: 12),
-            Text('Telefone: (81) xxxx-xxxx'),
+            const Text('Telefone: (81) xxxx-xxxx'),
             SizedBox(height: 12),
-            Text('Celular: (81) 9xxxx-xxxx'),
+            const Text('Celular: (81) 9xxxx-xxxx'),
           ],
         ),
       ),

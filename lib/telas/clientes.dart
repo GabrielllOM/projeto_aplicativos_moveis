@@ -6,27 +6,28 @@ class Clientes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // fundo branco
+      backgroundColor: Colors.white,                    // fundo branco
       appBar: AppBar(
-        backgroundColor: Colors.pink,
-        title: Text('Clientes'),
+        backgroundColor: Colors.pink,                  // barra rosa
+        foregroundColor: Colors.white,                 // seta + título brancos
+        title: const Text('Clientes'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Título com ícone
+            // Ícone grande + título rosa
             Row(
-              children: [
-                Icon(Icons.people, color: Colors.pink, size: 32),
-                SizedBox(width: 8),
+              children: const [
+                Icon(Icons.people, color: Colors.pink, size: 60),
+                SizedBox(width: 12),
                 Text(
                   'Clientes',
                   style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.pink,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
+                    color: Colors.pink,                // texto rosa
                   ),
                 ),
               ],
@@ -36,9 +37,9 @@ class Clientes extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _criarLogoCliente('images/facebook.png', 'FACEBOOK'),
-                _criarLogoCliente('images/whatsapp.png', 'WHATSAPP'),
-                _criarLogoCliente('images/google.png', 'GOOGLE'),
+                _logoCliente('images/facebook.png', 'FACEBOOK'),
+                _logoCliente('images/whatsapp.png', 'WHATSAPP'),
+                _logoCliente('images/google.png', 'GOOGLE'),
               ],
             ),
           ],
@@ -47,7 +48,8 @@ class Clientes extends StatelessWidget {
     );
   }
 
-  Widget _criarLogoCliente(String caminhoImagem, String nome) {
+  // Helper para criar cada logo
+  static Widget _logoCliente(String caminhoImagem, String nome) {
     return Column(
       children: [
         Image.asset(
@@ -56,8 +58,11 @@ class Clientes extends StatelessWidget {
           height: 60,
           fit: BoxFit.contain,
         ),
-        SizedBox(height: 8),
-        Text(nome),
+        const SizedBox(height: 8),
+        Text(
+          nome,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
       ],
     );
   }
